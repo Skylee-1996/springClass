@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.myweb.www.repository.BoardDAO"> 
+  	
+  	<insert id="insert">
+  		insert into board(title, writer, content)
+  		values(#{title},#{writer},#{content})
+  	</insert>
+  	<select id="selectList" resultType="bvo">
+  		select * from board order by bno desc
+  	</select>
+  	<select id="selectOne" resultType="bvo">
+  		select * from board where bno = #{bno}
+  	</select>
+  	<update id="update" >
+  		update board set title = #{title}, content = #{content}, read_count = read_count-2, mod_at = now() where bno = #{bno}
+  	</update>
+ 	<update id="updateRead">
+  			 update board set read_count = read_count+1 where bno = #{bno}
+  	</update>
+  	<delete id="delete">
+  		delete from board where bno = #{bno}
+  	</delete>
+  </mapper>
