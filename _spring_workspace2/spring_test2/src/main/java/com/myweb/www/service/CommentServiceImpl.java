@@ -25,8 +25,13 @@ public class CommentServiceImpl implements CommentService{
 	}
 
 	@Override
-	public List<PagingHandler> getList(long bno, PagingVO pgvo) {
+	public List<CommentVO> getList(long bno, PagingVO pgvo) {
 		return cdao.selectList(bno, pgvo);
+	}
+
+	@Override
+	public int getTotal(long bno) {
+		return cdao.countTotal(bno);
 	}
 
 }

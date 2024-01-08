@@ -10,6 +10,8 @@ public interface CommentService {
 
 	int post(CommentVO cvo);
 
-	List<PagingHandler> getList(long bno, PagingVO pgvo);
+	List<CommentVO> getList(long bno, PagingVO pgvo);
+
+	int getTotal(long bno);
 
 }

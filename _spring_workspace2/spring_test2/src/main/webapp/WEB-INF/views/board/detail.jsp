@@ -70,7 +70,7 @@
 
 <!-- 댓글 더보기 버튼  -->
 <div>
-	<button type="button" data-Page="1" class="btn btn-dark" style="visibility:hidden">More+</button>
+	<button type="button" id="more" data-Page="1" class="btn btn-dark" style="visibility:hidden">More+</button>
 </div> 
    
    <script type="text/javascript">

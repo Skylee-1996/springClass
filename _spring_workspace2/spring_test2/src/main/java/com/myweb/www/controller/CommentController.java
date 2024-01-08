@@ -38,13 +38,16 @@ public class CommentController {
 	}
 	
 	@GetMapping(value="/{bno}/{page}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<PagingHandler>> list(@PathVariable("bno") long bno
+	public ResponseEntity<PagingHandler> list(@PathVariable("bno") long bno
 			,@PathVariable("page") int page){
 		log.info(">>>bno>>> {}", bno);
 		log.info(">>>page>>> {}", page);
 		PagingVO pgvo = new PagingVO(page,5);
-		List<PagingHandler> list = csv.getList(bno,pgvo);
-		return new ResponseEntity<List<PagingHandler>>(list, HttpStatus.OK);
+		List<CommentVO> list = csv.getList(bno,pgvo);
+		int totalcount = csv.getTotal(bno);
+		PagingHandler pghr = new PagingHandler(pgvo,totalcount,list);
+		log.info(">>pght>>{}", pghr);
+		return new ResponseEntity<PagingHandler>(pghr, HttpStatus.OK);
 	}
 }
 

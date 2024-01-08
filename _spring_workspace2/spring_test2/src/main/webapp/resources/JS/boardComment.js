@@ -72,15 +72,19 @@ async function spreadCommentList(bno, page=1){
                 let add = `<div class="accordion-item">`;
                 add += `<h2 class="accordion-header">`;
                 add += `<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">`;
-                add += ` no.${result[i].cno} / ${result[i].writer} / ${result[i].modAt}</button>`;
+                add += ` no.${result.cmtList[i].cno} / ${result.cmtList[i].writer} / ${result.cmtList[i].modAt}</button>`;
                 add += `</h2>`;
                 add += `<div id="collapse${i}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">`
                 add += `<div class="accordion-body">`;
-                add += `<button type="button" data-cno="${result[i].cno}" class="btn btn-outline-danger btn-sm cmtModBtn">수정</button>`;
-                add += `<button type="button" data-cno="${result[i].cno}" class="btn btn-outline-warning btn-sm cmtDelBtn">삭제</button>`;
-                add += `<input type="text" class="form-control cmtText" value=${result[i].content}>`
+                add += `<button type="button" data-cno="${result.cmtList[i].cno}" class="btn btn-outline-danger btn-sm cmtModBtn">수정</button>`;
+                add += `<button type="button" data-cno="${result.cmtList[i].cno}" class="btn btn-outline-warning btn-sm cmtDelBtn">삭제</button>`;
+                add += `<input type="text" class="form-control cmtText" value=${result.cmtList[i].content}>`
                 add += `</div></div></div>`;
                 div.innerHTML += add;
+            }
+
+            if(result.cmtList.length > 4){
+                document.getElementById("more").style.visibility = 'visible';
             }
         }else{
             div.innerHTML = `<div class="accordion-body">Comment List Empty</div>`;

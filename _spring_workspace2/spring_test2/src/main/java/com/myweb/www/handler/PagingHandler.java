@@ -50,9 +50,8 @@ public class PagingHandler {
 		this.next = this.endPage < realEndPage;
 	}
 	
-	public PagingHandler(PagingVO pgvo, int totalCount, List<CommentVO> list) {
-		this.
-		
+	public PagingHandler(PagingVO pgvo, int totalCount, List<CommentVO> cmtList) {
+		this(pgvo, totalCount);
+		this.cmtList = cmtList;
 	}
-	
 }
