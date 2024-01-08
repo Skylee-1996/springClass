@@ -24,3 +24,16 @@ read_count int default 0,
 cmt_qty int default 0,
 has_file int default 0,
 primary key(bno));
+
+
+
+------2024 01 08
+
+create table comment(
+cno bigint auto_increment,
+bno bigint not null,
+writer varchar(100) not null,
+content text not null,
+reg_at datetime default now(),
+mod_at datetime default now(),
+primary key(cno));
