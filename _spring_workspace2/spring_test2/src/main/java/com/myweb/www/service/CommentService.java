@@ -14,4 +14,5 @@ public interface CommentService {
 
 	int getTotal(long bno);
 
+	int modify(CommentVO cvo);
 }

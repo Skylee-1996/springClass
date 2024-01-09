@@ -44,7 +44,7 @@ public class BoardServiceImpl implements BoardService {
 	public int remove(int bno) {
 		return bdao.delete(bno);
 	}
-
+	
 	@Override
 	public int getTotalCount(PagingVO pgvo) {
 		return bdao.selectTotalCount(pgvo);

@@ -3,6 +3,7 @@ package com.myweb.www.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.myweb.www.domain.CommentVO;
 import com.myweb.www.domain.PagingVO;
@@ -32,6 +33,11 @@ public class CommentServiceImpl implements CommentService{
 	@Override
 	public int getTotal(long bno) {
 		return cdao.countTotal(bno);
+	}
+
+	@Override
+	public int modify(CommentVO cvo) {
+		return cdao.updateCvo(cvo);
 	}
 
 }

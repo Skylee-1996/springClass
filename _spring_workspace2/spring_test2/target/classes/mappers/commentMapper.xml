@@ -9,7 +9,7 @@
   	values(#{bno}, #{writer}, #{content})
   </insert>
   
-  <select id="selectList" resultType="cvo">
+    <select id="selectList" resultType="cvo">
    select * from comment where bno = #{bno}
    order by cno desc
    limit #{pgvo.pageStart}, #{pgvo.qty}
@@ -17,5 +17,7 @@
    	<select id="countTotal" resultType="int">
   		select count(cno) from comment where bno=#{bno};
   	</select>
-  
+  	<update id="updateCvo">
+  		update comment set content = #{content}, mod_at = now() where cno = #{cno}
+  	</update>
   </mapper>

@@ -37,7 +37,6 @@ public class BoardController {
 		log.info("register check>>> {}", isOk);
 		
 		return "redirect:/board/list";
-		
 	}
 	
 	@GetMapping("/list")

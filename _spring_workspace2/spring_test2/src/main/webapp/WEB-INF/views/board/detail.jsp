@@ -70,9 +70,31 @@
 
 <!-- 댓글 더보기 버튼  -->
 <div>
-	<button type="button" id="more" data-Page="1" class="btn btn-dark" style="visibility:hidden">More+</button>
+	<button type="button" id="more" data-page="1" class="btn btn-dark" style="visibility:hidden">More+</button>
 </div> 
    
+   
+   <!-- 모달창  -->
+ <div class="modal" id="myModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Writer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        	<div class="input-group mb-3">
+        		<input type="text"  class="form-control" id="cmtTextMod">
+        		<button type="button" class="btn btn-primary" id="cmtModBtn">Post</button>
+        	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
    <script type="text/javascript">
 	let bnoVal = `<c:out value="${bvo.bno}" />`;
 	console.log(bnoVal);
