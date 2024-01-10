@@ -37,3 +37,6 @@ content text not null,
 reg_at datetime default now(),
 mod_at datetime default now(),
 primary key(cno));
+
+
+----2024 01 10

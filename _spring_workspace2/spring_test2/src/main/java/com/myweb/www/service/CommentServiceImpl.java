@@ -40,4 +40,9 @@ public class CommentServiceImpl implements CommentService{
 		return cdao.updateCvo(cvo);
 	}
 
+	@Override
+	public int delete(long cno) {
+		return cdao.delete(cno);
+	}
+
 }
