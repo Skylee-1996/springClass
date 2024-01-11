@@ -1,0 +1,42 @@
+-- 2024 -01 -04
+
+-- DB 积己
+-- 1.User 积己 / DB积己
+-- root拌沥栏肺 db积己, User 积己
+create database mywebdb;
+--db积己 备巩
+create user 'mywebUser'@'localhost'
+identified by 'mysql;'
+-- user 鼻茄 何咯
+grant all privileges on mywebdb.* 
+to 'mywebUser'@'localhost' with grant option;
+-- 鼻茄 汲沥 肯丰
+flush privileges;
+
+create table board(
+bno bigint not null auto_increment,
+title varchar(200) not null,
+writer varchar(100) not null,
+content text not null,
+reg_at datetime default now(),
+mod_at datetime default now(),
+read_count int default 0,
+cmt_qty int default 0,
+has_file int default 0,
+primary key(bno));
+
+
+
+------2024 01 08
+
+create table comment(
+cno bigint auto_increment,
+bno bigint not null,
+writer varchar(100) not null,
+content text not null,
+reg_at datetime default now(),
+mod_at datetime default now(),
+primary key(cno));
+
+
+----2024 01 10
