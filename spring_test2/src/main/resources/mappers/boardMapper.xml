@@ -39,7 +39,7 @@
   		update board b set has_file =
   		(select count(bno) from file where bno =b.bno);
   	</update>
-  	
+  	<!--update board set read_Count = read_Count + #{cnt} where bno = #{bno}  -->
   	
   	<sql id="search">
   		<if test="type != null">

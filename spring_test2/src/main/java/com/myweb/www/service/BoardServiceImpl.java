@@ -36,6 +36,8 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO getDetail(int bno) {
 
 		bdao.updateRead(bno);
+		
+		
 		BoardVO bvo = bdao.selectOne(bno);
 		List<FileVO> flist = fdao.getFileList(bno);
 		BoardDTO bdto = new BoardDTO(bvo,flist);
