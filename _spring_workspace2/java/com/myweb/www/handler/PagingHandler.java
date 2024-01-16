@@ -32,7 +32,7 @@ public class PagingHandler {
 		//1부터 10까지 어떤 숫자가 클릭 되더라도 endPage는 변함없이 10이어야함
 		//1 2 3 4 ... 10 / 10 나머지를 올려(ceil) 1로 만듬 * 10
 		
-		
+	
 		this.endPage = (int)Math.ceil(pgvo.getPageNo()
 				/(double)pgvo.getQty())*pgvo.getQty();   
 		this.startPage = endPage - 9;
